@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+   
+</head>
+
+
+
+<body>
+
+    <nav>
+        <a href="#" class="brand">
+            <span> Universities </span>
+        </a>
+        <div class="menu">
+            <form style="display: flex; align-items: center;">
+                
+                <input placeholder="Search Universities" />
+                <input type="submit" value="search">
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid overflow-hidden mt-5" style="margin: 50px 0px 0px 20px;" >
+        <h1><%= country.charAt(0).toUpperCase() + country.slice(1) %></h1>
+    
+        <div class="row">
+            <div class="col-lg-3"><a href="/denmark" class="btn btn-lg w-100 custom-button border off-white-border">Denmark</a></div>
+            <div class="col-lg-3"><a href="/australia" class="btn btn-lg w-100 custom-button border off-white-border">Australia</a></div>
+            <div class="col-lg-3"><a href="/france" class="btn btn-lg w-100 custom-button border off-white-border">France</a></div>
+            <div class="col-lg-3"><a href="/usa" class="btn btn-lg w-100 custom-button border off-white-border">USA</a></div>
+        </div>
+        <% uni_data.forEach( (row)=> { %>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-right: 50px;">
+                  <h3>
+                      <%= row.name %>
+                 </h3>
+                 <a class="button" href="<%= row.web_pages[0] %>" target="_blank">visit</a>
+            </div>
+         <% }); %>
+    </div>
+
+</body>
+</html>
